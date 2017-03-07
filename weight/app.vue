@@ -1,4 +1,3 @@
-// app.vue
 <style>
    h1 {
       color: #f00;
@@ -17,6 +16,4 @@ export default {
     }
   }
 }
-
-
 </script>

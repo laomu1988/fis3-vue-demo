@@ -45,7 +45,6 @@
   ```
     <app></app>
     <script src="js/base/mod.js"></script>
-    <script src="js/base/vueify-insert-css.js"></script>
     <script src="js/base/vue.js"></script>
     <script>
         var App = require('weight/app.vue');
@@ -67,13 +66,9 @@
  npm install fis3-hook-relative -g -d
  npm install fis3-postpackager-loader -g -d
 
- ### es6相关模块(根据需要选择安装)
- npm install babel-plugin-transform-runtime
- npm install babel-preset-es2015
- npm install fis-parser-babel2
-
- ### vue
- npm install fis3-parser-vue
+ ### es6 vue相关模块
+ npm install fis-parser-babel-5.x
+ npm install fis3-parser-vue-component
 
  ```
 
@@ -96,7 +91,7 @@
             isMod: true,
             isJsLike: true,
             isComponent: true,
-            parser: fis.plugin('vue')
+            parser: [fis.plugin('vue-component'), fis.plugin('babel-5.x')]
         })
         // 普通js不增加module名称
         .match("*.js", {
@@ -105,7 +100,7 @@
             isComponent: false,
             useHash: false,
             // 设置js文件为babel解析，支持es6的写法。
-            parser: fis.plugin('babel2')
+            // parser: fis.plugin('babel-5.x')
         })
 
         .match('::package', {

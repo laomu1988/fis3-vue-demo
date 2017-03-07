@@ -31,7 +31,7 @@ fis
         isMod: true,
         isJsLike: true,
         isComponent: true,
-        parser: fis.plugin('vue')
+        parser: [fis.plugin('vue-component'), fis.plugin('babel-5.x')]
     })
 
     .match('::package', {
